@@ -23,10 +23,15 @@ public:
 	int speed;
 
 	// 所载船员
-	Crew crews[100];
+	//Crew crews[100];
 	// 领队
 	Crew officer[5];
-
+	
+	int captain_num = 0;
+	int  pilot_num = 0;
+	int engineer_num = 0;
+	int miner_num = 0;
+	int warrior_num = 0;
 	//食物
 	int foods;
 	//燃料

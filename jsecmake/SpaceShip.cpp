@@ -33,10 +33,19 @@ void SpaceShip::init()
 {
 	cout << "The spaceship is Warthog." << endl;
 
-	for (int i = 0; i < 100; i++) {
-		Crew crew;
-		crew.set_position(random(5));
-		crews[i] = crew;
+	for (int i = 0; i < 100; i++) 
+	{
+		int n= random(5);
+		switch (n)
+		{
+		case 0: captain_num++; break;
+		case 1: pilot_num++; break;
+		case 2: engineer_num++; break;
+		case 3: miner_num++; break;
+		case 4:warrior_num++; break;
+		default:
+			break;
+		}
 	}
 	calculate_crew();
 
@@ -52,34 +61,37 @@ void SpaceShip::init()
 	}
 
 
+
 }
 
 void SpaceShip::calculate_crew() {
-	int len = sizeof(crews) / sizeof(crews[0]); //船员数组长度
-	int captain = 0, pilot = 0, enginner = 0, miner = 0, warrior = 0;
-	for (int i = 0; i < len; i++) {
-		if (crews[i].position == "Captain") {
-			captain++;
-		}
-		else if (crews[i].position == "Pilot") {
-			pilot++;
-		}
-		else if (crews[i].position == "Engineer") {
-			enginner++;
-		}
-		else if (crews[i].position == "Miner") {
-			miner++;
-		}
-		else if (crews[i].position == "Warrior") {
-			warrior++;
-		}
+	//int len = sizeof(crews) / sizeof(crews[0]); //船员数组长度
+	//int captain = 0, pilot = 0, enginner = 0, miner = 0, warrior = 0;
+	//for (int i = 0; i < len; i++) 
+	//{
+	//	if (crews[i].position == "Captain") {
+	//		captain++;
+	//	}
+	//	else if (crews[i].position == "Pilot") {
+	//		pilot++;
+	//	}
+	//	else if (crews[i].position == "Engineer") {
+	//		enginner++;
+	//	}
+	//	else if (crews[i].position == "Miner") {
+	//		miner++;
+	//	}
+	//	else if (crews[i].position == "Warrior") {
+	//		warrior++;
+	//	}
 
-	}
-	cout << "captain:" << captain << endl;
-	cout << "pilot:" << pilot << endl;
-	cout << "enginner:" << enginner << endl;
-	cout << "miner:" << miner << endl;
-	cout << "warrior:" << warrior << endl;
+	//}
+	cout << "captain:" << captain_num << endl;
+	cout << "pilot:" << pilot_num << endl;
+	cout << "enginner:" << engineer_num << endl;
+	cout << "miner:" << miner_num << endl;
+	cout << "warrior:" << warrior_num << endl;
+	cout << "---------------------------------------------------------" << endl;
 }
 
 void  SpaceShip::trade(Alien alien) {
